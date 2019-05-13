@@ -1,0 +1,33 @@
+{
+  "name": "ta-bulk-testing",
+  "version": "0.0.1",
+  "description": "This is a project that helps you make bulk testing to twilio's autopilot infraestructure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErickAgrazal/ta-bulk-testing.git"
+  },
+  "keywords": [
+    "twilio",
+    "autopilot",
+    "testing",
+    "queries"
+  ],
+  "author": "Erick Agrazal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErickAgrazal/ta-bulk-testing/issues"
+  },
+  "homepage": "https://github.com/ErickAgrazal/ta-bulk-testing#readme",
+  "dependencies": {
+    "csv-parse": "^4.4.1",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.22",
+    "intent-utterance-generator": "^0.0.2",
+    "twilio": "^3.30.3"
+  }
+}
