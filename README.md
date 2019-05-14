@@ -19,16 +19,24 @@ $ node index.js --help
   This is a project that helps you make bulk testing to twilio's autopilot infraestructure.
 
   Usage
-    $ ta-bulk-test
+    $ ta-bulk-test <action>
  
   Options
-      --bot, -b Import bot config file so that it can be deployed to twilio.
-      --expand, -e Take the fixtures file and expand it. This process relies on https://www.npmjs.com/package/intent-utterance-expander
-      --export, -x Export report to a given name. Eg. --export report.json
-      --fixtures, -f  Import an specific fixture file. CSV Format is mandatory.
+      --bot, -b Import bot config file so that it can be deployed
+                to twilio.
+      --expand, -e Take the fixtures file and expand it.
+                   This process relies on "intent-utterance-expander"
+                   project.
+      --export, -x Export report to a given name.
+                   Eg. --export report.json.
+                   If you send 'export' without a filename,
+                   it will output the report in output.json.
+      --fixtures, -f Import an specific fixture file. CSV Format
+                     is mandatory.
+      --language, -l Language for the testing. Default: 'en-US'
 
   Examples
-    $ yarn start --expand --fixtures ./fixtures/en-US.csv --export output.json
+    $ yarn start --expand --fixtures ./fixtures/en-US.csv --export
 ```
 
 ## Fixtures
