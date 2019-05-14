@@ -30,3 +30,24 @@ $ node index.js --help
   Examples
     $ yarn start --expand --fixtures ./fixtures/en-US.csv --export output.json
 ```
+
+## Fixtures
+In order to generate the fixtures, this project relies in <a href="https://www.npmjs.com/package/intent-utterance-expander">this project</a> in order to expand the intents in your file.
+
+### Example of the fixture file using the expander:
+```csv
+task, intent
+hello_world, (Hi | Hello | Hey) I am Erick
+```
+
+### Example of the fixture file without using the expander:
+```csv
+task, intent
+hello_world, Hi I am Erick
+hello_world, Hello I am Erick
+hello_world, Hey I am Erick
+hello_world, Hey I am Erick
+```
+**Note:** It's suggested that you use the expander to minimize the size of your fixture file.
+
+In the folder `fixtures` of this project, there's an example `.csv` file using the expander feature.
