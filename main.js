@@ -13,6 +13,7 @@ const settings = {
     DEFAULT_CSV_FILE: path.join(__dirname, './fixtures/en-US.csv'),
     DEFAULT_LANGUAGE: 'en-US',
     MESSAGES: {
+        INITIALIZING_MESSAGE: 'Initializing.',
         FINISHED_PARSING: 'File parsed correctly!',
         FINISHED_DATA_EXPANSION: 'Data expanded correctly!',
         FINISHED_TA_QUERIES: 'All data was sent correctly!',
@@ -68,7 +69,7 @@ const cli = meow(`
 });
 
 async function main(actions, flags){
-    const spinner = ora('Initializing.').start();
+    const spinner = ora(settings.MESSAGES.INITIALIZING_MESSAGE).start();
     try {
         const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : settings.DEFAULT_CSV_FILE;
         const expandData = flags.expand !== undefined;
