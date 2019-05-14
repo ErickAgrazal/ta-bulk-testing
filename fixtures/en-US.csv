@@ -1,3 +1,2 @@
 task, intent
-service-issue--printing--User-cannot-print, (I|My colleague|The user) cannot print
-null, (Hello|Hi|What's up) bot
+hello_world, (Hi | Hello | Hey) I am Erick
