@@ -10,6 +10,8 @@ import submitQueries from './ta';
 
 const settings = {
     DEFAULT_OUTPUT_FILE: 'output.json',
+    DEFAULT_CSV_FILE: path.join(__dirname, './fixtures/en-US.csv'),
+    DEFAULT_LANGUAGE: 'en-US',
     MESSAGES: {
         FINISHED_PARSING: 'File parsed correctly!',
         FINISHED_DATA_EXPANSION: 'Data expanded correctly!',
@@ -68,9 +70,9 @@ const cli = meow(`
 async function main(actions, flags){
     const spinner = ora('Initializing.').start();
     try {
-        const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : path.join(__dirname, './fixtures/en-US.csv');
+        const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : settings.DEFAULT_CSV_FILE;
         const expandData = flags.expand !== undefined;
-        const language = flags.language !== undefined ? flags.language : 'en-US';
+        const language = flags.language !== undefined ? flags.language : settings.DEFAULT_LANGUAGE;
         const exportReport = flags.export;
         const data = await parser(filePath);
         spinner.stopAndPersist({
