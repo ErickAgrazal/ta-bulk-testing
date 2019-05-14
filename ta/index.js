@@ -1,4 +1,6 @@
+import got from 'got';
 import twilio from 'twilio';
+
 import buildMakeTaConfig from './Config';
 import buildMakeQueries from './Queries';
 
@@ -14,6 +16,6 @@ const makeTaConfig = buildMakeTaConfig(settings.API_URL,
                                        twilioCredentials,
                                        process.env.ASSISTANT_SID);
 
-const makeQueries = buildMakeQueries(makeTaConfig, settings.API_RESOURCE);
+const makeQueries = buildMakeQueries(got, makeTaConfig, settings.API_RESOURCE);
 
 export default makeQueries;
