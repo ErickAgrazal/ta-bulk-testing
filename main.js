@@ -24,13 +24,18 @@ const cli = meow(`
       $ ta-bulk-test <action>
  
     Options
-        --bot, -b Import bot config file so that it can be deployed to twilio.
+        --bot, -b Import bot config file so that it can be deployed
+                  to twilio.
         --expand, -e Take the fixtures file and expand it.
-                     This process relies on "intent-utterance-expander" project.
+                     This process relies on "intent-utterance-expander"
+                     project.
         --export, -x Export report to a given name.
-                     Eg. --export report.json. If you send 'export' without a filename,
+                     Eg. --export report.json.
+                     If you send 'export' without a filename,
                      it will output the report in output.json.
-        --fixtures, -f  Import an specific fixture file. CSV Format is mandatory.
+        --fixtures, -f Import an specific fixture file. CSV Format
+                       is mandatory.
+        --language, -l Language for the testing. Default: 'en-US'
 
     Examples
       $ yarn start --expand --fixtures ./fixtures/en-US.csv --export
@@ -52,6 +57,10 @@ const cli = meow(`
         fixtures: {
             type: 'string',
             alias: 'f'
+        },
+        language: {
+            type: 'string',
+            alias: 'l'
         },
     }
 });
