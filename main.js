@@ -8,6 +8,17 @@ import writeJson from './exporter';
 import parser from './parser';
 import submitQueries from './ta';
 
+const settings = {
+    DEFAULT_OUTPUT_FILE: 'output.json',
+    MESSAGES: {
+        FINISHED_PARSING: 'File parsed correctly!',
+        FINISHED_DATA_EXPANSION: 'Data expanded correctly!',
+        FINISHED_TA_QUERIES: 'All data was sent correctly!',
+        SUCCEDED_MESSAGE: `Testing complete.`,
+        SYMBOL: '✔',
+    }
+}
+
 const cli = meow(`
     Usage
       $ ta-bulk-test <action>
@@ -50,17 +61,26 @@ async function main(actions, flags){
         const language = flags.language !== undefined ? flags.language : 'en-US';
         const exportReport = flags.export;
         const data = await parser(filePath);
-        spinner.stopAndPersist({symbol: '✔', text: 'File parsed correctly!'});
+        spinner.stopAndPersist({
+            symbol: settings.MESSAGES.SYMBOL,
+            text: settings.MESSAGES.FINISHED_PARSING
+        });
         const expandedData = expandData ? expandUtterances(data) : data;
         if (expandData){
-            spinner.stopAndPersist({symbol: '✔', text: 'Data expanded correctly!'});
+            spinner.stopAndPersist({
+                symbol: settings.MESSAGES.SYMBOL,
+                text: settings.MESSAGES.FINISHED_DATA_EXPANSION
+            });
         }
         const report = await submitQueries(expandedData, language).submitBulkTests(spinner);
-        spinner.stopAndPersist({symbol: '✔', text: 'All data was sent correctly!'});
+        spinner.stopAndPersist({
+            symbol: settings.MESSAGES.SYMBOL,
+            text: settings.MESSAGES.FINISHED_TA_QUERIES
+        });
         if (exportReport){
-            await writeJson(exportReport, report);
+            await writeJson(exportReport !== '' ? exportReport : settings.DEFAULT_OUTPUT_FILE, report);
         }
-        spinner.succeed(`Testing complete.`);
+        spinner.succeed(settings.MESSAGES.SUCCEDED_MESSAGE);
     } catch (error) {
         spinner.fail(error.toString());
     }
