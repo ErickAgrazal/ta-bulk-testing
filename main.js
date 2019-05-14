@@ -25,12 +25,15 @@ const cli = meow(`
  
     Options
         --bot, -b Import bot config file so that it can be deployed to twilio.
-        --expand, -e Take the fixtures file and expand it. This process relies on https://www.npmjs.com/package/intent-utterance-expander
-        --export, -x Export report to a given name. Eg. --export report.json
+        --expand, -e Take the fixtures file and expand it.
+                     This process relies on "intent-utterance-expander" project.
+        --export, -x Export report to a given name.
+                     Eg. --export report.json. If you send 'export' without a filename,
+                     it will output the report in output.json.
         --fixtures, -f  Import an specific fixture file. CSV Format is mandatory.
 
     Examples
-      $ ta-bulk-test deploy --fixtures ./en-US.json --bot ./bot.json
+      $ yarn start --expand --fixtures ./fixtures/en-US.csv --export
 `, {
     booleanDefault: undefined,
     flags: {
