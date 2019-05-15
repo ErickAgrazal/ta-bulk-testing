@@ -34,7 +34,7 @@ $ ta-bulk-test --help
       --language, -l Language for the testing. Default: 'en-US'
 
   Examples
-    $ yarn start --expand --fixtures ./fixtures/en-US.csv --export
+    $ ta-bulk-test --expand --fixtures ./fixtures/en-US.csv --export
 ```
 
 ## Fixtures
