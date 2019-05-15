@@ -14,7 +14,7 @@ In order to be able to run this project, you'll need to have an `.env` file with
 ## Running
 Now you're able to run the project in the cli.
 ```bash
-$ yarn start --help
+$ ta-bulk-test --help
 
   This is a project that helps you make bulk testing to twilio's autopilot infraestructure.
 
