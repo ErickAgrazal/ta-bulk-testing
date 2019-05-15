@@ -1,5 +1,5 @@
 # ta-bulk-testing
-This is a project that helps you make bulk testing to twilio's autopilot infraestructure.
+This is a project that helps you make bulk testing to twilio's autopilot infraestructure. It uses a csv file fixtures as input and returns a json report if needed.
 
 ## Installation
 In order to install it, just clone the project and install the dependencies.
@@ -22,8 +22,6 @@ $ yarn start --help
     $ ta-bulk-test <action>
  
   Options
-      --bot, -b Import bot config file so that it can be deployed
-                to twilio.
       --expand, -e Take the fixtures file and expand it.
                    This process relies on "intent-utterance-expander"
                    project.
@@ -40,7 +38,7 @@ $ yarn start --help
 ```
 
 ## Fixtures
-In order to generate the fixtures, this project relies in <a href="https://www.npmjs.com/package/intent-utterance-expander">this project</a> in order to expand the intents in your file.
+In order to generate the fixtures, this project relies in <a href="https://www.npmjs.com/package/intent-utterance-expander">this project</a> in order to expand the intents in your file. The first row, should be `task, intent` so that the library can match correctly the intents to the task that the bot should respond.
 
 ### Example of the fixture file using the expander:
 ```csv
