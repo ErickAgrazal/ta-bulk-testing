@@ -71,11 +71,16 @@ const cli = meow(`
 async function main(actions, flags){
     const spinner = ora(settings.MESSAGES.INITIALIZING_MESSAGE).start();
     try {
-        const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : settings.DEFAULT_CSV_FILE;
+        const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : undefined;
         const expandData = flags.expand !== undefined;
         const language = flags.language !== undefined ? flags.language : settings.DEFAULT_LANGUAGE;
         const exportReport = flags.export;
         const data = await parser(filePath);
+
+        if (!filePath){
+            throw new Error('Make sure that the --fixtures files is valid ')
+        }
+
         spinner.stopAndPersist({
             symbol: settings.MESSAGES.SYMBOL,
             text: settings.MESSAGES.FINISHED_PARSING

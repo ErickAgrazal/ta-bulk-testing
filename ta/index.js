@@ -9,6 +9,12 @@ const settings = {
     API_RESOURCE: 'Queries',
 }
 
+const ACCOUNT_SID = process.env.ACCOUNT_SID;
+const AUTH_TOKEN = process.env.AUTH_TOKEN;
+if (!ACCOUNT_SID || !AUTH_TOKEN){
+    throw new Error("You need to have in your environment variables both ACCOUNT_SID and AUTH_TOKEN from twilio.");
+}
+
 const twilioClient = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
 const twilioCredentials = `${twilioClient.username}:${twilioClient.password}`;
 

@@ -57,3 +57,7 @@ hello_world, Hey I am Erick
 **Note:** It's suggested that you use the expander to minimize the size of your fixture file.
 
 In the folder `fixtures` of this project, there's an example `.csv` file using the expander feature.
+
+## TODO
+- [] Refactor the code to receive the twilio's variables from the command.
+- [] Add testing

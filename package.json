@@ -3,9 +3,16 @@
   "version": "0.0.1",
   "description": "This is a project that helps you make bulk testing to twilio's autopilot infraestructure.",
   "main": "index.js",
+  "bin": {
+    "ta-bulk-testing": "index.js"
+  },
   "scripts": {
     "test": "mocha",
-    "start": "node index.js"
+    "start": "node index.js",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "git-push": "git push origin gh-pages --force && git checkout master",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
   },
   "repository": {
     "type": "git",
