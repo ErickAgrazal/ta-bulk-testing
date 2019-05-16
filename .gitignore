@@ -89,3 +89,6 @@ typings/
 
 # Outputed responses
 output.json
+
+# Fixtures for testing
+fixtures/en-US.csv

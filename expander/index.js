@@ -1,6 +1,6 @@
 import intentUtteranceExpander from 'intent-utterance-expander';
-import buildExpandUtterances from './Expand';
+import buildExpandSamples from './Expand';
 
-const expandUtterances = buildExpandUtterances(intentUtteranceExpander);
+const expandSamples = buildExpandSamples(intentUtteranceExpander);
 
-export default expandUtterances;
+export default expandSamples;
