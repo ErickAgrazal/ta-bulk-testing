@@ -1,5 +1,5 @@
 # ta-bulk-testing
-This is a project that helps you make bulk testing to twilio's autopilot infraestructure. It uses a csv file fixtures as input and returns a json report if needed.
+This is a cli program that helps you make bulk testing to twilio's autopilot infraestructure. It uses a csv file fixtures as input and returns a json report if needed.
 
 ## Installation
 In order to install it, just clone the project and install the dependencies.
