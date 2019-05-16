@@ -59,5 +59,5 @@ hello_world, Hey I am Erick
 In the folder `fixtures` of this project, there's an example `.csv` file using the expander feature.
 
 ## TODO
-- [] Refactor the code to receive the twilio's variables from the command.
-- [] Add testing
+- [ ] Refactor the code to receive the twilio's variables from the command.
+- [ ] Add testing
