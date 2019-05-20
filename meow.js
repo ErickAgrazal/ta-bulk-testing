@@ -1,4 +1,8 @@
 const configString = `
+This is a cli program that helps you make bulk testing to
+twilio\'s autopilot infraestructure. It uses a csv file fixtures
+as input and returns a json report if needed.
+
 Usage
   $ ta-bulk-test <action>
 
