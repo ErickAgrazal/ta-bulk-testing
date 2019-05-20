@@ -25,7 +25,7 @@ Now you're able to run the project in the cli.
 $ ta-bulk-test --help
 
   This is a cli program that helps you make bulk testing to
-  twilio\'s autopilot infraestructure. It uses a csv file fixtures
+  twilio's autopilot infraestructure. It uses a csv file fixtures
   as input and returns a json report if needed.
 
   Usage
@@ -42,11 +42,11 @@ $ ta-bulk-test --help
       --fixtures, -f Import an specific fixture file. CSV Format
                      is mandatory.
       --language, -l Language for the testing. Default: en-US
-      --account_sid, -s Twilio\'s account SID, default will try to
+      --account_sid, -s Twilio's account SID, default will try to
                         lookup for it in ~/.twilio/config.json.
-      --auth_token, -t Twilio\'s authorization token, default will
+      --auth_token, -t Twilio's authorization token, default will
                        try to lookup for it in ~/.twilio/config.json.
-      --assistant_sid, -a Twilio\'s specific assistant ID for this testing,
+      --assistant_sid, -a Twilio's specific assistant ID for this testing,
                           default will try to lookup for it in
                           ~/.twilio/config.json.
   Examples
