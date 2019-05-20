@@ -39,7 +39,7 @@ function getCorrectPercentage(correctCount, failCount){
 }
 
 export default function(http, makeTaConfig, resource){
-    return function(bulkTests, language){
+    return function(bulkTests, language, userPass, assistantSID){
         return Object.freeze({
             submitBulkTests: async function(spinner){
                 let report = [];
@@ -47,7 +47,7 @@ export default function(http, makeTaConfig, resource){
                 let failCount = 0;
                 for(let i = 0; i < bulkTests.length; i += 1){
                     const body = `Language=${language}&Query=${bulkTests[i].intent}`;
-                    const taConfig = makeTaConfig({resource, body});
+                    const taConfig = makeTaConfig({resource, body, userPass, assistantSID});
                     const response = await makeHttpCall(http(taConfig));
                     const parsedResponse = parseResponse(response);
                     const resolvedTask = getResolvedTaskFromResponse(parsedResponse)
