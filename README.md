@@ -1,5 +1,5 @@
 # ta-bulk-testing
-This is an extension to [Twilio Autopilot CLI](https://github.com/twilio/autopilot-cli) it helps with bulk tests to the Autopilot infraestructure. It uses csv file fixtures as input and returns a json report if needed.
+This cli helps with bulk tests to the Autopilot infraestructure. It uses csv file fixtures as input and returns a json report if needed.
 
 ## Installing
 `npm install -g ta-bulk-test`
