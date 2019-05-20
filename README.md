@@ -21,7 +21,7 @@ If any of those three places have the variables, it will raise an exception inst
 
 ## Running
 Now you're able to run the project in the cli.
-```bash
+```
 $ ta-bulk-test --help
 
   This is a cli program that helps you make bulk testing to
