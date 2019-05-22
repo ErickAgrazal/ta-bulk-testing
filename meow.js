@@ -21,9 +21,8 @@ Options
                       lookup for it in ~/.twilio/config.json.
     --auth_token, -t Twilio's authorization token, default will
                      try to lookup for it in ~/.twilio/config.json.
-    --assistant_sid, -a Twilio's specific assistant ID for this testing,
-                        default will try to lookup for it in
-                        ~/.twilio/config.json.
+    --assistant_sid, -a Twilio's specific assistant ID for this testing.
+
 Examples
   $ ta-bulk-test --expand --fixtures ./fixtures/en-US.csv --export
 `;
