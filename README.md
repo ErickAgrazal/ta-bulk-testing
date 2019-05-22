@@ -22,35 +22,32 @@ If any of those three places have the variables, it will raise an exception inst
 ## Running
 Now you're able to run the project in the cli.
 ```
-$ ta-bulk-test --help
+This is a cli program that helps you make bulk testing to
+twilio\'s autopilot infraestructure. It uses a csv file fixtures
+as input and returns a json report if needed.
 
-  This is a cli that helps you make bulk testing to
-  twilio's autopilot infraestructure. It uses csv file fixtures
-  as input and returns a json report if needed.
+Usage
+  $ ta-bulk-test <action>
 
-  Usage
-    $ ta-bulk-test <action>
- 
-  Options
-      --expand, -e Take the fixtures file and expand it.
-                   This process relies on "intent-utterance-expander"
-                   project.
-      --export, -x Export report to a given name.
-                   Eg. --export report.json.
-                   If you send export without a filename,
-                   it will output the report in output.json.
-      --fixtures, -f Import an specific fixture file. CSV Format
-                     is mandatory.
-      --language, -l Language for the testing. Default: en-US
-      --account_sid, -s Twilio's account SID, default will try to
-                        lookup for it in ~/.twilio/config.json.
-      --auth_token, -t Twilio's authorization token, default will
-                       try to lookup for it in ~/.twilio/config.json.
-      --assistant_sid, -a Twilio's specific assistant ID for this testing,
-                          default will try to lookup for it in
-                          ~/.twilio/config.json.
-  Examples
-    $ ta-bulk-test --expand --fixtures ./fixtures/en-US.csv --export
+Options
+    --expand, -e Take the fixtures file and expand it.
+                 This process relies on "intent-utterance-expander"
+                 project.
+    --export, -x Export report to a given name.
+                 Eg. --export report.json.
+                 If you send 'export' without a filename,
+                 it will output the report in output.json.
+    --fixtures, -f Import an specific fixture file. CSV Format
+                   is mandatory.
+    --language, -l Language for the testing. Default: 'en-US'
+    --account_sid, -s Twilio's account SID, default will try to
+                      lookup for it in ~/.twilio/config.json.
+    --auth_token, -t Twilio's authorization token, default will
+                     try to lookup for it in ~/.twilio/config.json.
+    --assistant_sid, -a Twilio's specific assistant ID for this testing.
+
+Examples
+  $ ta-bulk-test --expand --fixtures ./fixtures/en-US.csv --export
 ```
 
 ## Fixtures
