@@ -46,7 +46,7 @@ export default function(http, makeTaConfig, resource){
                 let correctCount = 0;
                 let failCount = 0;
                 for(let i = 0; i < bulkTests.length; i += 1){
-                    const body = `Language=${language}&Query=${bulkTests[i].intent}`;
+                    const body = `Language=${language}&Query=${bulkTests[i].samples}`;
                     const taConfig = makeTaConfig({resource, body, userPass, assistantSID});
                     const response = await makeHttpCall(http(taConfig));
                     const parsedResponse = parseResponse(response);
@@ -57,7 +57,7 @@ export default function(http, makeTaConfig, resource){
                     spinner.text = `${i + 1}/${bulkTests.length} tests done. ${correctPercentage}% were resolved as expected.`;
                     report.push({
                         expectedTask: bulkTests[i].task,
-                        intent: bulkTests[i].intent,
+                        intent: bulkTests[i].samples,
                         resolvedTask,
                         resolvedCorrectly: correctTask,
                         twilio: {
