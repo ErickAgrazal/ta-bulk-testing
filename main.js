@@ -7,18 +7,18 @@ import parser from './parser';
 import getCredentials from './credentialsHandler';
 import { twilioClient, makeQueries } from './ta';
 import settings from './settings';
+import { SSL_OP_NETSCAPE_CA_DN_BUG } from 'constants';
 
 
 const cli = meow(...settings.MEOW);
 
 async function main(actions, flags){
-    const spinner = ora(settings.MESSAGES.INITIALIZING_MESSAGE).start();
+    let spinner = await ora(settings.MESSAGES.INITIALIZING_MESSAGE).start();
     try {
         const filePath = (flags && flags.fixtures !== false) ? flags.fixtures : undefined;
         if (!filePath){
             throw new Error(settings.MESSAGES.NOT_VALID_FIXTURE_FILE);
         }
-
         const expandData = flags.expand !== undefined;
         const language = flags.language !== undefined ? flags.language : settings.DEFAULT_LANGUAGE;
         const exportReport = flags.export;
@@ -38,7 +38,7 @@ async function main(actions, flags){
         }
         const { assistantSID, authToken, accountSID } = await getCredentials(flags);
         const userPass = twilioClient(accountSID, authToken);
-        const report = await makeQueries(expandedData, language, userPass, assistantSID).submitBulkTests(spinner);
+        const { report } = await makeQueries(expandedData, language, userPass, assistantSID).submitBulkTests(spinner);
         spinner.stopAndPersist({
             symbol: settings.MESSAGES.SYMBOL,
             text: settings.MESSAGES.FINISHED_TA_QUERIES

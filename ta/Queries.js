@@ -45,6 +45,9 @@ export default function(http, makeTaConfig, resource){
                 let report = [];
                 let correctCount = 0;
                 let failCount = 0;
+                console.log('=============================================');
+                console.log('|   Realtime report:                        |');
+                console.log('=============================================');
                 for(let i = 0; i < bulkTests.length; i += 1){
                     const body = `Language=${language}&Query=${bulkTests[i].samples}`;
                     const taConfig = makeTaConfig({resource, body, userPass, assistantSID});
@@ -54,6 +57,7 @@ export default function(http, makeTaConfig, resource){
                     const correctTask = taskIsCorrect(bulkTests[i].task, resolvedTask);
                     if (correctTask) { correctCount += 1 } else { failCount += 1}
                     const correctPercentage = getCorrectPercentage(correctCount, failCount);
+                    console.log(`${i + 1}/${bulkTests.length} tests done. ${correctPercentage}% were resolved as expected.`);
                     spinner.text = `${i + 1}/${bulkTests.length} tests done. ${correctPercentage}% were resolved as expected.`;
                     report.push({
                         expectedTask: bulkTests[i].task,
@@ -66,8 +70,9 @@ export default function(http, makeTaConfig, resource){
                         }
                     });
                 }
+                console.log('=============================================');
                 spinner.stopAndPersist({symbol: '✔', text: spinner.text });
-                return report
+                return { report, spinner }
             },
             printReport: function(){},
         });
