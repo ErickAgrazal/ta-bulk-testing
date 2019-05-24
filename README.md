@@ -55,13 +55,13 @@ In order to generate the fixtures, this project relies on <a href="https://www.n
 
 ### Example of the fixture file using the expander:
 ```csv
-task, sample
+task, samples
 hello_world, (Hi | Hello | Hey) I am Erick
 ```
 
 ### Example of the fixture file without using the expander:
 ```csv
-task, sample
+task, samples
 hello_world, Hi I am Erick
 hello_world, Hello I am Erick
 hello_world, Hey I am Erick
