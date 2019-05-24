@@ -1,6 +1,6 @@
 {
   "name": "ta-bulk-testing",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "This is a project that helps you make bulk testing to twilio's autopilot infraestructure.",
   "main": "index.js",
   "bin": {
