@@ -23,7 +23,7 @@ If any of those three places have the variables, it will raise an exception inst
 Now you're able to run the project in the cli.
 ```
 This is a cli program that helps you make bulk testing to
-twilio\'s autopilot infraestructure. It uses a csv file fixtures
+twilio's autopilot infraestructure. It uses a csv file fixtures
 as input and returns a json report if needed.
 
 Usage
