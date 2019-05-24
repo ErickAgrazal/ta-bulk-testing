@@ -8,7 +8,13 @@ export default {
     DEFAULT_LANGUAGE: 'en-US',
     DEFAULT_TWILIO_CONFIG_FILE: path.join(os.homedir(), '.twilio/config.json'),
     MESSAGES: {
-        NOT_VALID_FIXTURE_FILE: 'You need to send a valid --fixtures parameter in order to do the testing.',
+        NOT_VALID_FIXTURE_FILE: `You need to send a valid --fixtures parameter in order to do the testing.
+
+Remember that the file format needs to be .csv. And the structure of the file,
+needs to be as follows:
+
+task, samples
+hello_world, (Hi | Hello | Hey) I am Erick`,
         INITIALIZING_MESSAGE: 'Initializing.',
         FINISHED_PARSING: 'File parsed correctly!',
         FINISHED_DATA_EXPANSION: 'Data expanded correctly!',
