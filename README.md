@@ -2,7 +2,7 @@
 This cli helps with bulk tests to the Autopilot infraestructure. It uses csv file fixtures as input and returns a json report if needed.
 
 ## Installing
-`npm install -g ta-bulk-test`
+`npm install -g ta-bulk-testing`
 
 ## Twilio's config parameters
 In order for this application to run, it requires you to set three twilio variables.
@@ -27,7 +27,7 @@ twilio\'s autopilot infraestructure. It uses a csv file fixtures
 as input and returns a json report if needed.
 
 Usage
-  $ ta-bulk-test <action>
+  $ ta-bulk-testing <action>
 
 Options
     --expand, -e Take the fixtures file and expand it.
@@ -47,7 +47,7 @@ Options
     --assistant_sid, -a Twilio's specific assistant ID for this testing.
 
 Examples
-  $ ta-bulk-test --expand --fixtures ./fixtures/en-US.csv --export
+  $ ta-bulk-testing --expand --fixtures ./fixtures/en-US.csv --export
 ```
 
 ## Fixtures
