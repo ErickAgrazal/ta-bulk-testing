@@ -20,9 +20,9 @@ export default function(fs, { DEFAULT_TWILIO_CONFIG_FILE, DEFAULT_PROMPTS_CONFIG
         let assistantSID = _assistantSID;
         if (!accountSID || !authToken || !assistantSID){
             // Handling the configuration with meow params
-            accountSID = paramsFromMeow.account_sid;
-            authToken = paramsFromMeow.auth_token;
-            assistantSID = paramsFromMeow.assistant_sid;
+            accountSID = paramsFromMeow.accountSid;
+            authToken = paramsFromMeow.authToken;
+            assistantSID = paramsFromMeow.assistantSid;
             if (!accountSID || !authToken || !assistantSID){
                if (fs.existsSync(DEFAULT_TWILIO_CONFIG_FILE)){
                     // Handling the configuration if the config file exits
