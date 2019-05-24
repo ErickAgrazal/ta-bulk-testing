@@ -4,7 +4,7 @@ twilio\'s autopilot infraestructure. It uses a csv file fixtures
 as input and returns a json report if needed.
 
 Usage
-  $ ta-bulk-testing <action>
+  $ ta-bulk-testing <options>
 
 Options
     --expand, -e Take the fixtures file and expand it.
