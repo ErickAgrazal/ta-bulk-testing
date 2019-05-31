@@ -57,8 +57,7 @@ export default function(http, makeTaConfig, resource){
                     const correctTask = taskIsCorrect(bulkTests[i].task, resolvedTask);
                     if (correctTask) { correctCount += 1 } else { failCount += 1}
                     const correctPercentage = getCorrectPercentage(correctCount, failCount);
-                    console.log(`${i + 1}/${bulkTests.length} tests done. ${correctPercentage}% were resolved as expected.`);
-                    spinner.text = `${i + 1}/${bulkTests.length} tests done. ${correctPercentage}% were resolved as expected.`;
+                    console.log(`${i + 1}/${bulkTests.length} tests done. ${Number((correctPercentage).toFixed(3))}% success rate.`);
                     report.push({
                         expectedTask: bulkTests[i].task,
                         intent: bulkTests[i].samples,
