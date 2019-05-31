@@ -71,6 +71,13 @@ hello_world, Hey I am Erick
 
 In the folder `fixtures` of this project, there's an example `.csv` file using the expander feature.
 
+### For tasks resolved as null
+In case you want to add test cases that resolves as `null`, you should do the following:
+```
+task, samples
+null, this is a samples that should not be resolved by the NLR.
+```
+
 ## Development
 ### Installation
 In order to install it, just clone the project and install the dependencies.
